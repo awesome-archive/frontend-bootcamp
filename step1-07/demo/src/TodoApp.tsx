@@ -6,7 +6,12 @@ import { Todos, FilterTypes } from './TodoApp.types';
 
 let index = 0;
 
-export class TodoApp extends React.Component<any, any> {
+interface TodoAppState {
+  todos: Todos;
+  filter: FilterTypes;
+}
+
+export class TodoApp extends React.Component<any, TodoAppState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,8 +58,9 @@ export class TodoApp extends React.Component<any, any> {
   };
 
   private _complete = id => {
-    const newTodos = { ...this.state.todos };
-    newTodos[id].completed = !newTodos[id].completed;
+    const { todos } = this.state;
+    const todo = todos[id];
+    const newTodos = { ...todos, [id]: { ...todo, completed: !todo.completed } };
 
     this.setState({
       todos: newTodos

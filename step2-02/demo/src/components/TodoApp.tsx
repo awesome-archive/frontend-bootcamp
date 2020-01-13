@@ -11,10 +11,14 @@ export class TodoApp extends React.Component<any, Store> {
   constructor(props) {
     super(props);
     this.state = {
-      todos: {},
+      todos: {
+        id0: { label: 'hello', completed: false },
+        id1: { label: 'world', completed: false }
+      },
       filter: 'all'
     };
   }
+
   render() {
     const { filter, todos } = this.state;
     return (

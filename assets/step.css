@@ -7,6 +7,11 @@ body {
   padding: 0;
 }
 
+body.ms-Fabric {
+  font-size: 14px;
+  line-height: 20px;
+}
+
 #app {
   flex: 1 1 40%;
   padding: 50px;
@@ -21,11 +26,15 @@ body {
 #markdownReadme {
   box-sizing: border-box;
   flex: 1 1 60%;
-  background: #efefef;
+  background: #f3f2f1;
   padding: 50px;
   margin: 0 auto;
   height: 100vh;
-  overflow: scroll;
+  overflow: auto;
+}
+
+#markdownReadme.exercise {
+  background-color: #ecf6fd;
 }
 
 #markdownReadme pre {
@@ -34,6 +43,19 @@ body {
   background: #1e1e1e;
   margin: 15px 0;
   overflow: auto;
+}
+
+#markdownReadme code {
+  font-family: Consolas, Menlo, Monaco, monospace;
+  font-size: 0.9em;
+  background-color: white;
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
+}
+
+#markdownReadme code.hljs {
+  background-color: inherit;
+  font-weight: bold;
 }
 
 /**

@@ -14,9 +14,9 @@ export const TodoFooter = (props: TodoFooterProps) => {
   // - try it with an object: styles={{ ... }}
   // - try it with a function: styles={props => ({ ... })}
   return (
-    <Stack horizontal horizontalAlign="space-between">
+    <Stack horizontal horizontalAlign="space-between" verticalAlign="center">
       <Text>
-        {itemCount} item{itemCount > 1 ? 's' : ''} left
+        {itemCount} item{itemCount === 1 ? '' : 's'} left
       </Text>
       <DefaultButton onClick={() => props.clear()}>Clear Completed</DefaultButton>
     </Stack>
